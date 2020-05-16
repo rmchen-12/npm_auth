@@ -1,0 +1,19 @@
+version: '3'
+
+services:
+  nodejs:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: nodejs # 镜像名称
+    container_name: nodejs # 容器名称
+    restart: always # 重启方式
+    networks: # 加入指定网络
+      - app-network
+    volumes: # 卷挂载路径
+      - /root/npm/config:/npm/config # npm私服相关配置挂载到该目录下
+      - /root/npm/storage:/npm/storage # npm私服包信息挂载到该目录下
+
+networks: # 实现通信
+  app-network:
+    driver: bridge

@@ -1,6 +1,8 @@
-exports.keys = 'thisisakey';
-exports.security = {
-  csrf: {
-    enable: false,
+module.exports = {
+  keys: 'thisisakey',
+  security: {
+    csrf: {
+      enable: false,
+    },
   },
 };
