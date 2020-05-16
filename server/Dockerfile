@@ -1,4 +1,4 @@
-FROM node:sli
+FROM node:10.0-alpine
 RUN mkdir -p /home/project
 WORKDIR /home/project 
 COPY package.json /home/project/package.json
