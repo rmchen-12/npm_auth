@@ -10,6 +10,8 @@ services:
     restart: always # 重启方式
     networks: # 加入指定网络
       - app-network
+    ports:
+      - 7001:7001
     volumes: # 卷挂载路径
       - /root/npm/config:/npm/config # npm私服相关配置挂载到该目录下
       - /root/npm/storage:/npm/storage # npm私服包信息挂载到该目录下
